@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="">
+
+<title>A Revised Parsimonious Bayesian Model of Terrorist Targeting and State Escalation – Minerva Project</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-172ba59bd5e0b52282274ba0c0cc16fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Minerva Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Update</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../explore.html"> 
+<span class="menu-text">Explore</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../pdfpresentation.html"> 
+<span class="menu-text">Presentation</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#theoretical-problem" id="toc-theoretical-problem" class="nav-link active" data-scroll-target="#theoretical-problem"><span class="header-section-number">1</span> Theoretical Problem</a></li>
+  <li><a href="#players-and-regime-types" id="toc-players-and-regime-types" class="nav-link" data-scroll-target="#players-and-regime-types"><span class="header-section-number">2</span> Players and Regime Types</a></li>
+  <li><a href="#incomplete-information-about-terrorist-capacity" id="toc-incomplete-information-about-terrorist-capacity" class="nav-link" data-scroll-target="#incomplete-information-about-terrorist-capacity"><span class="header-section-number">3</span> Incomplete Information About Terrorist Capacity</a></li>
+  <li><a href="#terrorist-actions" id="toc-terrorist-actions" class="nav-link" data-scroll-target="#terrorist-actions"><span class="header-section-number">4</span> Terrorist Actions</a></li>
+  <li><a href="#bayesian-updating" id="toc-bayesian-updating" class="nav-link" data-scroll-target="#bayesian-updating"><span class="header-section-number">5</span> Bayesian Updating</a></li>
+  <li><a href="#security-targeting-and-capacity-inference" id="toc-security-targeting-and-capacity-inference" class="nav-link" data-scroll-target="#security-targeting-and-capacity-inference"><span class="header-section-number">6</span> Security Targeting and Capacity Inference</a></li>
+  <li><a href="#state-response" id="toc-state-response" class="nav-link" data-scroll-target="#state-response"><span class="header-section-number">7</span> State Response</a></li>
+  <li><a href="#common-security-calculus" id="toc-common-security-calculus" class="nav-link" data-scroll-target="#common-security-calculus"><span class="header-section-number">8</span> Common Security Calculus</a></li>
+  <li><a href="#regime-specific-political-incentives" id="toc-regime-specific-political-incentives" class="nav-link" data-scroll-target="#regime-specific-political-incentives"><span class="header-section-number">9</span> Regime-Specific Political Incentives</a>
+  <ul class="collapse">
+  <li><a href="#democracies" id="toc-democracies" class="nav-link" data-scroll-target="#democracies"><span class="header-section-number">9.1</span> Democracies</a></li>
+  <li><a href="#autocracies" id="toc-autocracies" class="nav-link" data-scroll-target="#autocracies"><span class="header-section-number">9.2</span> Autocracies</a></li>
+  </ul></li>
+  <li><a href="#state-escalation-condition" id="toc-state-escalation-condition" class="nav-link" data-scroll-target="#state-escalation-condition"><span class="header-section-number">10</span> State Escalation Condition</a></li>
+  <li><a href="#posterior-escalation-threshold" id="toc-posterior-escalation-threshold" class="nav-link" data-scroll-target="#posterior-escalation-threshold"><span class="header-section-number">11</span> Posterior Escalation Threshold</a></li>
+  <li><a href="#threshold-regions" id="toc-threshold-regions" class="nav-link" data-scroll-target="#threshold-regions"><span class="header-section-number">12</span> Threshold Regions</a>
+  <ul class="collapse">
+  <li><a href="#low-threat-region" id="toc-low-threat-region" class="nav-link" data-scroll-target="#low-threat-region"><span class="header-section-number">12.1</span> Low-Threat Region</a></li>
+  <li><a href="#intermediate-threat-region" id="toc-intermediate-threat-region" class="nav-link" data-scroll-target="#intermediate-threat-region"><span class="header-section-number">12.2</span> Intermediate-Threat Region</a></li>
+  <li><a href="#high-threat-region" id="toc-high-threat-region" class="nav-link" data-scroll-target="#high-threat-region"><span class="header-section-number">12.3</span> High-Threat Region</a></li>
+  </ul></li>
+  <li><a href="#basic-regime-target-crossover" id="toc-basic-regime-target-crossover" class="nav-link" data-scroll-target="#basic-regime-target-crossover"><span class="header-section-number">13</span> Basic Regime-Target Crossover</a></li>
+  <li><a href="#revised-crossover-with-bayesian-updating" id="toc-revised-crossover-with-bayesian-updating" class="nav-link" data-scroll-target="#revised-crossover-with-bayesian-updating"><span class="header-section-number">14</span> Revised Crossover With Bayesian Updating</a></li>
+  <li><a href="#autocratic-dual-mechanism" id="toc-autocratic-dual-mechanism" class="nav-link" data-scroll-target="#autocratic-dual-mechanism"><span class="header-section-number">15</span> Autocratic Dual Mechanism</a></li>
+  <li><a href="#target-specific-frequency-thresholds" id="toc-target-specific-frequency-thresholds" class="nav-link" data-scroll-target="#target-specific-frequency-thresholds"><span class="header-section-number">16</span> Target-Specific Frequency Thresholds</a></li>
+  <li><a href="#terrorist-payoff" id="toc-terrorist-payoff" class="nav-link" data-scroll-target="#terrorist-payoff"><span class="header-section-number">17</span> Terrorist Payoff</a></li>
+  <li><a href="#equilibrium-interpretation" id="toc-equilibrium-interpretation" class="nav-link" data-scroll-target="#equilibrium-interpretation"><span class="header-section-number">18</span> Equilibrium Interpretation</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses"><span class="header-section-number">19</span> Hypotheses</a>
+  <ul class="collapse">
+  <li><a href="#h1-democratic-civilian-target-frequency-hypothesis" id="toc-h1-democratic-civilian-target-frequency-hypothesis" class="nav-link" data-scroll-target="#h1-democratic-civilian-target-frequency-hypothesis"><span class="header-section-number">19.1</span> H1: Democratic Civilian-Target Frequency Hypothesis</a></li>
+  <li><a href="#h2-autocratic-security-target-frequency-hypothesis" id="toc-h2-autocratic-security-target-frequency-hypothesis" class="nav-link" data-scroll-target="#h2-autocratic-security-target-frequency-hypothesis"><span class="header-section-number">19.2</span> H2: Autocratic Security-Target Frequency Hypothesis</a></li>
+  <li><a href="#h3-regime-target-crossover-hypothesis" id="toc-h3-regime-target-crossover-hypothesis" class="nav-link" data-scroll-target="#h3-regime-target-crossover-hypothesis"><span class="header-section-number">19.3</span> H3: Regime-Target Crossover Hypothesis</a></li>
+  <li><a href="#h4-capacity-inference-hypothesis" id="toc-h4-capacity-inference-hypothesis" class="nav-link" data-scroll-target="#h4-capacity-inference-hypothesis"><span class="header-section-number">19.4</span> H4: Capacity-Inference Hypothesis</a></li>
+  <li><a href="#h5-autocratic-dual-mechanism-hypothesis" id="toc-h5-autocratic-dual-mechanism-hypothesis" class="nav-link" data-scroll-target="#h5-autocratic-dual-mechanism-hypothesis"><span class="header-section-number">19.5</span> H5: Autocratic Dual-Mechanism Hypothesis</a></li>
+  <li><a href="#h6-differential-escalation-threshold-hypothesis" id="toc-h6-differential-escalation-threshold-hypothesis" class="nav-link" data-scroll-target="#h6-differential-escalation-threshold-hypothesis"><span class="header-section-number">19.6</span> H6: Differential Escalation-Threshold Hypothesis</a></li>
+  <li><a href="#h7-bayesian-shift-hypothesis" id="toc-h7-bayesian-shift-hypothesis" class="nav-link" data-scroll-target="#h7-bayesian-shift-hypothesis"><span class="header-section-number">19.7</span> H7: Bayesian-Shift Hypothesis</a></li>
+  <li><a href="#h8-threshold-contingency-hypothesis" id="toc-h8-threshold-contingency-hypothesis" class="nav-link" data-scroll-target="#h8-threshold-contingency-hypothesis"><span class="header-section-number">19.8</span> H8: Threshold-Contingency Hypothesis</a></li>
+  <li><a href="#h9-selective-state-capacity-hypothesis" id="toc-h9-selective-state-capacity-hypothesis" class="nav-link" data-scroll-target="#h9-selective-state-capacity-hypothesis"><span class="header-section-number">19.9</span> H9: Selective State-Capacity Hypothesis</a></li>
+  </ul></li>
+  <li><a href="#empirical-representation" id="toc-empirical-representation" class="nav-link" data-scroll-target="#empirical-representation"><span class="header-section-number">20</span> Empirical Representation</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">21</span> Conclusion</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="revised_terrorist_targeting_model.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="revised_terrorist_targeting_model.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">A Revised Parsimonious Bayesian Model of Terrorist Targeting and State Escalation</h1>
+<p class="subtitle lead">Target-Specific Attack Frequency, Regime Type, Belief Updating, and the Police-to-Military Threshold</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="theoretical-problem" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Theoretical Problem</h1>
+<p>States do not respond uniformly to terrorism. Some terrorist campaigns remain primarily matters for police, intelligence agencies, and courts, while others lead governments to mobilize or deploy military forces.</p>
+<p>The central argument developed here is that terrorist targeting affects state responses through two mechanisms.</p>
+<p>First, targets have different <strong>political meanings across regime types</strong>:</p>
+<ul>
+<li>In democracies, attacks against civilians can generate public-accountability pressures.</li>
+<li>In autocracies, attacks against military, police, and security institutions can generate regime-survival anxiety.</li>
+</ul>
+<p>Second, target choice may provide governments with <strong>information about terrorist organizational capacity</strong>. The terrorist organization knows its own strength, but the government observes that strength imperfectly. Governments therefore update their beliefs from observable terrorist behavior.</p>
+<p>The theoretical sequence is:</p>
+<p><span class="math display">\[
+\text{Target-specific attack frequency}
+\rightarrow
+\begin{cases}
+\text{political pressure},\\
+\text{belief updating about terrorist capacity}
+\end{cases}
+\rightarrow
+\text{state response}.
+\]</span></p>
+<p>The state’s ultimate choice is whether to continue treating terrorism primarily as a police/law-enforcement problem or escalate toward a military response.</p>
+</section>
+<section id="players-and-regime-types" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Players and Regime Types</h1>
+<p>There are two strategic actors:</p>
+<ol type="1">
+<li>a terrorist organization, <span class="math inline">\(T\)</span>;</li>
+<li>a state government, <span class="math inline">\(G\)</span>.</li>
+</ol>
+<p>The state has an exogenously given regime type</p>
+<p><span class="math display">\[
+r \in \{D,A\},
+\]</span></p>
+<p>where <span class="math inline">\(D\)</span> denotes democracy and <span class="math inline">\(A\)</span> denotes autocracy. Regime type is common knowledge.</p>
+<p>The model does not assume that democracies or autocracies are inherently more aggressive. Instead, regime type changes the political consequences associated with different terrorist targets.</p>
+</section>
+<section id="incomplete-information-about-terrorist-capacity" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Incomplete Information About Terrorist Capacity</h1>
+<p>Nature determines terrorist organizational capacity:</p>
+<p><span class="math display">\[
+\theta \in \{L,H\},
+\]</span></p>
+<p>where <span class="math inline">\(L\)</span> denotes a low-capacity organization and <span class="math inline">\(H\)</span> denotes a high-capacity organization.</p>
+<p>The prior probability of a high-capacity organization is</p>
+<p><span class="math display">\[
+\Pr(\theta=H)=\pi,
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+\Pr(\theta=L)=1-\pi.
+\]</span></p>
+<p>The terrorist organization observes its own type. The state does not.</p>
+<p>Let</p>
+<p><span class="math display">\[
+q_H&gt;q_L
+\]</span></p>
+<p>represent the expected security threat associated with high- and low-capacity organizations.</p>
+</section>
+<section id="terrorist-actions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Terrorist Actions</h1>
+<p>The terrorist organization chooses a campaign along two dimensions:</p>
+<ol type="1">
+<li>target type;</li>
+<li>attack frequency.</li>
+</ol>
+<p>Let</p>
+<p><span class="math display">\[
+x \in \{C,S\},
+\]</span></p>
+<p>where <span class="math inline">\(C\)</span> denotes civilian targets and <span class="math inline">\(S\)</span> denotes military/security-force targets.</p>
+<p>The organization also chooses</p>
+<p><span class="math display">\[
+f \in \{0,1\},
+\]</span></p>
+<p>where <span class="math inline">\(f=0\)</span> represents status-quo frequency and <span class="math inline">\(f=1\)</span> represents increased attack frequency.</p>
+<p>The terrorist action is therefore</p>
+<p><span class="math display">\[
+a=(x,f).
+\]</span></p>
+<p>The four observable campaign profiles are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Action</th>
+<th style="text-align: left;">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(C0\)</span></td>
+<td style="text-align: left;">Civilian targeting at status-quo frequency</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(C1\)</span></td>
+<td style="text-align: left;">Increased frequency of civilian attacks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(S0\)</span></td>
+<td style="text-align: left;">Security-force targeting at status-quo frequency</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(S1\)</span></td>
+<td style="text-align: left;">Increased frequency of security-force attacks</td>
+</tr>
+</tbody>
+</table>
+<p>This formulation makes target-specific attack frequencies the theoretically relevant empirical quantities.</p>
+</section>
+<section id="bayesian-updating" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Bayesian Updating</h1>
+<p>The state observes <span class="math inline">\(a=(x,f)\)</span> but does not directly observe terrorist capacity. It forms the posterior belief</p>
+<p><span class="math display">\[
+\mu(a)=\Pr(H\mid a).
+\]</span></p>
+<p>For an equilibrium-path action,</p>
+<p><span class="math display">\[
+\mu(a)=\frac{\pi\sigma_H(a)}{\pi\sigma_H(a)+(1-\pi)\sigma_L(a)}.
+\]</span></p>
+<p>The model does not assume that terrorists deliberately choose targets to signal strength. Instead, information can emerge because different terrorist types choose different actions with different probabilities.</p>
+</section>
+<section id="security-targeting-and-capacity-inference" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Security Targeting and Capacity Inference</h1>
+<p>Suppose high-capacity organizations are relatively more capable of attacking security institutions than low-capacity organizations. Then</p>
+<p><span class="math display">\[
+\Pr(S\mid H)&gt;\Pr(S\mid L).
+\]</span></p>
+<p>Bayes’ rule implies</p>
+<p><span class="math display">\[
+\Pr(H\mid S)&gt;\Pr(H).
+\]</span></p>
+<p>Thus,</p>
+<p><span class="math display">\[
+\mu_S&gt;\pi.
+\]</span></p>
+<p>Rarity alone, however, does not make security targeting informative. The relevant quantity is the likelihood ratio</p>
+<p><span class="math display">\[
+\frac{\Pr(S\mid H)}{\Pr(S\mid L)}.
+\]</span></p>
+<p>Security targeting provides information about terrorist capacity only when it is relatively more characteristic of high-capacity organizations.</p>
+</section>
+<section id="state-response" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> State Response</h1>
+<p>After observing the terrorist campaign and updating its beliefs, the state chooses</p>
+<p><span class="math display">\[
+y \in \{P,M\},
+\]</span></p>
+<p>where <span class="math inline">\(P\)</span> denotes a limited or police-centered response and <span class="math inline">\(M\)</span> denotes military escalation.</p>
+</section>
+<section id="common-security-calculus" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Common Security Calculus</h1>
+<p>Expected terrorist threat is</p>
+<p><span class="math display">\[
+Q(\mu)=q_L+(q_H-q_L)\mu(a).
+\]</span></p>
+<p>Let <span class="math inline">\(\phi&gt;0\)</span> represent the additional security pressure generated by increased attack frequency. Let <span class="math inline">\(\tau\)</span> represent a regime-neutral difference between civilian and security targeting. Let <span class="math inline">\(c(k)\)</span> represent the relative cost of military escalation compared with policing, conditional on known state capacity <span class="math inline">\(k\)</span>.</p>
+<p>The common security component is therefore</p>
+<p><span class="math display">\[
+Q(\mu)+\phi f+\tau\mathbf{1}\{x=C\}-c(k).
+\]</span></p>
+</section>
+<section id="regime-specific-political-incentives" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Regime-Specific Political Incentives</h1>
+<section id="democracies" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="democracies"><span class="header-section-number">9.1</span> Democracies</h2>
+<p>For democracies,</p>
+<p><span class="math display">\[
+\Pi_D(x,f)=d_C\mathbf{1}\{x=C\}+d_{CF}\mathbf{1}\{x=C\}f.
+\]</span></p>
+<p>The parameter <span class="math inline">\(d_C&gt;0\)</span> captures public-accountability pressure generated by civilian victimization. The parameter <span class="math inline">\(d_{CF}\geq 0\)</span> captures the possibility that this pressure increases as civilian attacks become more frequent.</p>
+</section>
+<section id="autocracies" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="autocracies"><span class="header-section-number">9.2</span> Autocracies</h2>
+<p>For autocracies,</p>
+<p><span class="math display">\[
+\Pi_A(x,f)=a_S\mathbf{1}\{x=S\}+a_{SF}\mathbf{1}\{x=S\}f.
+\]</span></p>
+<p>The parameter <span class="math inline">\(a_S&gt;0\)</span> captures regime-survival anxiety generated by attacks against the coercive apparatus. The parameter <span class="math inline">\(a_{SF}\geq 0\)</span> captures the possibility that repeated attacks against security institutions increasingly threaten perceptions of regime control.</p>
+</section>
+</section>
+<section id="state-escalation-condition" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> State Escalation Condition</h1>
+<p>The state’s net payoff advantage from military escalation is</p>
+<p><span class="math display">\[
+\Delta_r(a,\mu;k)=Q(\mu)+\phi f+\tau\mathbf{1}\{x=C\}+\Pi_r(x,f)-c(k).
+\]</span></p>
+<p>The state chooses military escalation whenever</p>
+<p><span class="math display">\[
+\Delta_r(a,\mu;k)\geq 0.
+\]</span></p>
+<p>Otherwise, it chooses the police-centered response.</p>
+</section>
+<section id="posterior-escalation-threshold" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Posterior Escalation Threshold</h1>
+<p>Substituting the expected-threat function gives</p>
+<p><span class="math display">\[
+q_L+(q_H-q_L)\mu(a)+\phi f+\tau\mathbf{1}\{x=C\}+\Pi_r(x,f)-c(k)\geq 0.
+\]</span></p>
+<p>Solving for the posterior belief gives</p>
+<p><span class="math display">\[
+\mu(a)\geq\mu_r^*(x,f;k),
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\mu_r^*(x,f;k)=
+\frac{c(k)-q_L-\phi f-\tau\mathbf{1}\{x=C\}-\Pi_r(x,f)}{q_H-q_L}.
+\]</span></p>
+<p>If</p>
+<p><span class="math display">\[
+\mu(a)&lt;\mu_r^*,
+\]</span></p>
+<p>the state treats terrorism primarily as a police problem. If</p>
+<p><span class="math display">\[
+\mu(a)\geq\mu_r^*,
+\]</span></p>
+<p>the state escalates militarily.</p>
+</section>
+<section id="threshold-regions" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Threshold Regions</h1>
+<section id="low-threat-region" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="low-threat-region"><span class="header-section-number">12.1</span> Low-Threat Region</h2>
+<p>When perceived terrorist capacity lies below both target-specific thresholds, the state chooses policing regardless of target type.</p>
+</section>
+<section id="intermediate-threat-region" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="intermediate-threat-region"><span class="header-section-number">12.2</span> Intermediate-Threat Region</h2>
+<p>For a democracy, suppose</p>
+<p><span class="math display">\[
+\mu_D^*(C,f)&lt;\mu&lt;\mu_D^*(S,f).
+\]</span></p>
+<p>Then civilian targeting produces military escalation while security targeting remains a police problem.</p>
+<p>For an autocracy, the ordering may reverse:</p>
+<p><span class="math display">\[
+\mu_A^*(S,f)&lt;\mu&lt;\mu_A^*(C,f).
+\]</span></p>
+<p>Then security targeting produces military escalation while civilian targeting remains a police problem.</p>
+</section>
+<section id="high-threat-region" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="high-threat-region"><span class="header-section-number">12.3</span> High-Threat Region</h2>
+<p>When perceived terrorist capacity exceeds both thresholds, both target types produce military escalation. Target type should therefore have its strongest observable effect near the escalation threshold.</p>
+</section>
+</section>
+<section id="basic-regime-target-crossover" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Basic Regime-Target Crossover</h1>
+<p>Holding posterior beliefs constant, democracies prefer escalation relatively more after civilian attacks when</p>
+<p><span class="math display">\[
+\tau+d_C+d_{CF}f&gt;0.
+\]</span></p>
+<p>Autocracies prefer escalation relatively more after security attacks when</p>
+<p><span class="math display">\[
+\tau-a_S-a_{SF}f&lt;0.
+\]</span></p>
+<p>Both conditions hold when</p>
+<p><span class="math display">\[
+-(d_C+d_{CF}f)&lt;\tau&lt;a_S+a_{SF}f.
+\]</span></p>
+</section>
+<section id="revised-crossover-with-bayesian-updating" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Revised Crossover With Bayesian Updating</h1>
+<p>Let</p>
+<p><span class="math display">\[
+\mu_C=\Pr(H\mid C)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\mu_S=\Pr(H\mid S).
+\]</span></p>
+<p>If security targeting is relatively more characteristic of strong organizations,</p>
+<p><span class="math display">\[
+\mu_S&gt;\mu_C.
+\]</span></p>
+<p>Define</p>
+<p><span class="math display">\[
+B=(q_H-q_L)(\mu_S-\mu_C).
+\]</span></p>
+<p>The generalized crossover condition becomes</p>
+<p><span class="math display">\[
+\boxed{B-(d_C+d_{CF}f)&lt;\tau&lt;B+(a_S+a_{SF}f)}.
+\]</span></p>
+<p>This is the central theoretical result. Target type affects state escalation through two channels:</p>
+<p><span class="math display">\[
+\text{Target type}
+\rightarrow
+\begin{cases}
+\text{regime-specific political pressure},\\
+\text{information about terrorist capacity}.
+\end{cases}
+\]</span></p>
+</section>
+<section id="autocratic-dual-mechanism" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Autocratic Dual Mechanism</h1>
+<p>For autocracies, security targeting can simultaneously increase regime-survival anxiety and perceived terrorist capacity:</p>
+<p><span class="math display">\[
+S
+\rightarrow
+\begin{cases}
+a_S\uparrow,\\
+\mu_S\uparrow
+\end{cases}
+\rightarrow M.
+\]</span></p>
+<p>The two mechanisms reinforce one another.</p>
+</section>
+<section id="target-specific-frequency-thresholds" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Target-Specific Frequency Thresholds</h1>
+<p>Let</p>
+<p><span class="math display">\[
+f_{xr}^*
+\]</span></p>
+<p>represent the target-specific frequency threshold at which regime <span class="math inline">\(r\)</span> switches from policing to military escalation.</p>
+<p>Under the relevant parameter restrictions, the model predicts for autocracies:</p>
+<p><span class="math display">\[
+\boxed{f_{SA}^*&lt;f_{CA}^*}.
+\]</span></p>
+<p>Equivalently, the difference in autocratic escalation incentives between security and civilian targeting increases with</p>
+<p><span class="math display">\[
+(q_H-q_L)(\mu_S-\mu_C)-\tau.
+\]</span></p>
+</section>
+<section id="terrorist-payoff" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Terrorist Payoff</h1>
+<p>Let terrorist payoff be</p>
+<p><span class="math display">\[
+U_T^\theta(a,y)=G_\theta(a)-D_\theta(a)\mathbf{1}\{y=M\}.
+\]</span></p>
+<p>There is no direct payoff from changing the state’s belief. Beliefs matter indirectly:</p>
+<p><span class="math display">\[
+a\rightarrow\mu(a)\rightarrow y\rightarrow U_T.
+\]</span></p>
+<p>The terrorist type chooses</p>
+<p><span class="math display">\[
+a_\theta^*\in\arg\max_a\left[G_\theta(a)-D_\theta(a)m_r(a)\right],
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+m_r(a)=\mathbf{1}\{\mu(a)\geq\mu_r^*(a;k)\}.
+\]</span></p>
+</section>
+<section id="equilibrium-interpretation" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Equilibrium Interpretation</h1>
+<p>The model can generate pooling, separating, or semi-separating equilibria. In a pooling equilibrium,</p>
+<p><span class="math display">\[
+\mu(a)=\pi.
+\]</span></p>
+<p>In a separating equilibrium, observed behavior can reveal terrorist capacity. Semi-separating equilibria generate partial Bayesian updating. The empirical theory requires only that some campaign behaviors be relatively more likely among high-capacity organizations.</p>
+</section>
+<section id="hypotheses" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Hypotheses</h1>
+<section id="h1-democratic-civilian-target-frequency-hypothesis" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="h1-democratic-civilian-target-frequency-hypothesis"><span class="header-section-number">19.1</span> H1: Democratic Civilian-Target Frequency Hypothesis</h2>
+<p>As the frequency of civilian-targeted terrorist attacks increases, the probability of military escalation should increase more strongly in democracies than in autocracies.</p>
+<p><span class="math display">\[
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_D
+&gt;
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_A.
+\]</span></p>
+</section>
+<section id="h2-autocratic-security-target-frequency-hypothesis" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="h2-autocratic-security-target-frequency-hypothesis"><span class="header-section-number">19.2</span> H2: Autocratic Security-Target Frequency Hypothesis</h2>
+<p>As the frequency of attacks against military and security forces increases, the probability of military escalation should increase more strongly in autocracies than in democracies.</p>
+<p><span class="math display">\[
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_A
+&gt;
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_D.
+\]</span></p>
+</section>
+<section id="h3-regime-target-crossover-hypothesis" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="h3-regime-target-crossover-hypothesis"><span class="header-section-number">19.3</span> H3: Regime-Target Crossover Hypothesis</h2>
+<p>The relationship between target-specific terrorist attack frequency and military escalation should reverse across regime types: civilian-targeted attack frequency should generate stronger escalation incentives in democracies, whereas security-force-targeted attack frequency should generate stronger escalation incentives in autocracies.</p>
+</section>
+<section id="h4-capacity-inference-hypothesis" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="h4-capacity-inference-hypothesis"><span class="header-section-number">19.4</span> H4: Capacity-Inference Hypothesis</h2>
+<p>Security-force targeting should increase the probability of military escalation when such attacks cause governments to infer that the terrorist organization possesses greater organizational capacity. The mechanism requires</p>
+<p><span class="math display">\[
+\Pr(S\mid H)&gt;\Pr(S\mid L).
+\]</span></p>
+</section>
+<section id="h5-autocratic-dual-mechanism-hypothesis" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="h5-autocratic-dual-mechanism-hypothesis"><span class="header-section-number">19.5</span> H5: Autocratic Dual-Mechanism Hypothesis</h2>
+<p>The effect of security-force targeting on military escalation should be especially strong in autocracies because attacks against coercive institutions simultaneously increase regime-survival anxiety and may increase perceived terrorist capacity.</p>
+</section>
+<section id="h6-differential-escalation-threshold-hypothesis" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="h6-differential-escalation-threshold-hypothesis"><span class="header-section-number">19.6</span> H6: Differential Escalation-Threshold Hypothesis</h2>
+<p>In autocracies, the frequency of security-force attacks required to trigger military escalation should be lower than the frequency of civilian attacks required to trigger military escalation:</p>
+<p><span class="math display">\[
+f_{SA}^*&lt;f_{CA}^*.
+\]</span></p>
+</section>
+<section id="h7-bayesian-shift-hypothesis" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="h7-bayesian-shift-hypothesis"><span class="header-section-number">19.7</span> H7: Bayesian-Shift Hypothesis</h2>
+<p>The autocratic security-target advantage should increase as the inferred capacity difference between security and civilian targeting grows:</p>
+<p><span class="math display">\[
+(q_H-q_L)(\mu_S-\mu_C)-\tau&gt;0.
+\]</span></p>
+</section>
+<section id="h8-threshold-contingency-hypothesis" class="level2" data-number="19.8">
+<h2 data-number="19.8" class="anchored" data-anchor-id="h8-threshold-contingency-hypothesis"><span class="header-section-number">19.8</span> H8: Threshold-Contingency Hypothesis</h2>
+<p>The effects of target type and regime type should be strongest when the state is near its police-to-military escalation threshold and weaker when perceived terrorist capacity is either very low or very high.</p>
+</section>
+<section id="h9-selective-state-capacity-hypothesis" class="level2" data-number="19.9">
+<h2 data-number="19.9" class="anchored" data-anchor-id="h9-selective-state-capacity-hypothesis"><span class="header-section-number">19.9</span> H9: Selective State-Capacity Hypothesis</h2>
+<p>Greater police, intelligence, bureaucratic, and judicial capacity should increase the level of terrorist threat necessary to induce military escalation.</p>
+</section>
+</section>
+<section id="empirical-representation" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Empirical Representation</h1>
+<p>Define</p>
+<p><span class="math display">\[
+F_C=\text{frequency of civilian-targeted attacks}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+F_S=\text{frequency of security-force-targeted attacks}.
+\]</span></p>
+<p>A reduced-form empirical model is</p>
+<p><span class="math display">\[
+\Pr(M_{it}=1)=F\!\left(
+\alpha+\beta_1F_{C,it}+\beta_2F_{S,it}+\beta_3D_i
++\beta_4F_{C,it}D_i+\beta_5F_{S,it}D_i
++\beta_6\widehat{\mu}_{it}+\beta_7k_{it}
++\mathbf{X}_{it}\gamma
+\right).
+\]</span></p>
+<p>The theoretical predictions concern marginal effects. For civilian attacks:</p>
+<p><span class="math display">\[
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_D
+&gt;
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_A.
+\]</span></p>
+<p>For security attacks:</p>
+<p><span class="math display">\[
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_A
+&gt;
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_D.
+\]</span></p>
+</section>
+<section id="conclusion" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Conclusion</h1>
+<p>The model proposes that target-specific terrorist attack frequency affects state escalation through three linked processes:</p>
+<p><span class="math display">\[
+\boxed{\text{Target-specific attack frequency}}
+\]</span></p>
+<p>affects</p>
+<p><span class="math display">\[
+\boxed{\text{regime-specific political vulnerability}}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\boxed{\text{government beliefs about terrorist capacity}},
+\]</span></p>
+<p>which jointly determine whether the state crosses</p>
+<p><span class="math display">\[
+\boxed{\text{the police-to-military escalation threshold}}.
+\]</span></p>
+<p>The most distinctive implication is that the same observable terrorist campaign can have different political meanings across regimes while simultaneously providing governments with information about terrorist organizational capacity.</p>
+<p>For autocracies in particular,</p>
+<p><span class="math display">\[
+\boxed{
+\text{security targeting}
+\rightarrow
+\text{survivability anxiety}
++
+\text{higher perceived terrorist capacity}
+\rightarrow
+\text{military escalation}
+}.
+\]</span></p>
+<p>This provides a theoretical explanation for why an autocratic government could tolerate a comparatively substantial civilian terrorist campaign as a police problem while responding militarily to a much smaller number of attacks against institutions central to regime security.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
