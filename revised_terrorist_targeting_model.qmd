@@ -54,8 +54,8 @@ The state's ultimate choice is whether to continue treating terrorism primarily 
 
 There are two strategic actors:
 
-1. a terrorist organization, $T$;
-2. a state government, $G$.
+1.  a terrorist organization, $T$;
+2.  a state government, $G$.
 
 The state has an exogenously given regime type
 
@@ -103,8 +103,8 @@ represent the expected security threat associated with high- and low-capacity or
 
 The terrorist organization chooses a campaign along two dimensions:
 
-1. target type;
-2. attack frequency.
+1.  target type;
+2.  attack frequency.
 
 Let
 
@@ -130,12 +130,12 @@ $$
 
 The four observable campaign profiles are:
 
-| Action | Interpretation |
-|:--|:--|
-| $C0$ | Civilian targeting at status-quo frequency |
-| $C1$ | Increased frequency of civilian attacks |
-| $S0$ | Security-force targeting at status-quo frequency |
-| $S1$ | Increased frequency of security-force attacks |
+| Action | Interpretation                                   |
+|:-------|:-------------------------------------------------|
+| $C0$   | Civilian targeting at status-quo frequency       |
+| $C1$   | Increased frequency of civilian attacks          |
+| $S0$   | Security-force targeting at status-quo frequency |
+| $S1$   | Increased frequency of security-force attacks    |
 
 This formulation makes target-specific attack frequencies the theoretically relevant empirical quantities.
 
