@@ -1,0 +1,594 @@
+---
+title: "A Revised Parsimonious Bayesian Model of Terrorist Targeting and State Escalation"
+subtitle: "Target-Specific Attack Frequency, Regime Type, Belief Updating, and the Police-to-Military Threshold"
+author: ""
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+  pdf:
+    toc: true
+    number-sections: true
+  docx:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Theoretical Problem
+
+States do not respond uniformly to terrorism. Some terrorist campaigns remain primarily matters for police, intelligence agencies, and courts, while others lead governments to mobilize or deploy military forces.
+
+The central argument developed here is that terrorist targeting affects state responses through two mechanisms.
+
+First, targets have different **political meanings across regime types**:
+
+- In democracies, attacks against civilians can generate public-accountability pressures.
+- In autocracies, attacks against military, police, and security institutions can generate regime-survival anxiety.
+
+Second, target choice may provide governments with **information about terrorist organizational capacity**. The terrorist organization knows its own strength, but the government observes that strength imperfectly. Governments therefore update their beliefs from observable terrorist behavior.
+
+The theoretical sequence is:
+
+$$
+\text{Target-specific attack frequency}
+\rightarrow
+\begin{cases}
+\text{political pressure},\\
+\text{belief updating about terrorist capacity}
+\end{cases}
+\rightarrow
+\text{state response}.
+$$
+
+The state's ultimate choice is whether to continue treating terrorism primarily as a police/law-enforcement problem or escalate toward a military response.
+
+# Players and Regime Types
+
+There are two strategic actors:
+
+1. a terrorist organization, $T$;
+2. a state government, $G$.
+
+The state has an exogenously given regime type
+
+$$
+r \in \{D,A\},
+$$
+
+where $D$ denotes democracy and $A$ denotes autocracy. Regime type is common knowledge.
+
+The model does not assume that democracies or autocracies are inherently more aggressive. Instead, regime type changes the political consequences associated with different terrorist targets.
+
+# Incomplete Information About Terrorist Capacity
+
+Nature determines terrorist organizational capacity:
+
+$$
+\theta \in \{L,H\},
+$$
+
+where $L$ denotes a low-capacity organization and $H$ denotes a high-capacity organization.
+
+The prior probability of a high-capacity organization is
+
+$$
+\Pr(\theta=H)=\pi,
+$$
+
+with
+
+$$
+\Pr(\theta=L)=1-\pi.
+$$
+
+The terrorist organization observes its own type. The state does not.
+
+Let
+
+$$
+q_H>q_L
+$$
+
+represent the expected security threat associated with high- and low-capacity organizations.
+
+# Terrorist Actions
+
+The terrorist organization chooses a campaign along two dimensions:
+
+1. target type;
+2. attack frequency.
+
+Let
+
+$$
+x \in \{C,S\},
+$$
+
+where $C$ denotes civilian targets and $S$ denotes military/security-force targets.
+
+The organization also chooses
+
+$$
+f \in \{0,1\},
+$$
+
+where $f=0$ represents status-quo frequency and $f=1$ represents increased attack frequency.
+
+The terrorist action is therefore
+
+$$
+a=(x,f).
+$$
+
+The four observable campaign profiles are:
+
+| Action | Interpretation |
+|:--|:--|
+| $C0$ | Civilian targeting at status-quo frequency |
+| $C1$ | Increased frequency of civilian attacks |
+| $S0$ | Security-force targeting at status-quo frequency |
+| $S1$ | Increased frequency of security-force attacks |
+
+This formulation makes target-specific attack frequencies the theoretically relevant empirical quantities.
+
+# Bayesian Updating
+
+The state observes $a=(x,f)$ but does not directly observe terrorist capacity. It forms the posterior belief
+
+$$
+\mu(a)=\Pr(H\mid a).
+$$
+
+For an equilibrium-path action,
+
+$$
+\mu(a)=\frac{\pi\sigma_H(a)}{\pi\sigma_H(a)+(1-\pi)\sigma_L(a)}.
+$$
+
+The model does not assume that terrorists deliberately choose targets to signal strength. Instead, information can emerge because different terrorist types choose different actions with different probabilities.
+
+# Security Targeting and Capacity Inference
+
+Suppose high-capacity organizations are relatively more capable of attacking security institutions than low-capacity organizations. Then
+
+$$
+\Pr(S\mid H)>\Pr(S\mid L).
+$$
+
+Bayes' rule implies
+
+$$
+\Pr(H\mid S)>\Pr(H).
+$$
+
+Thus,
+
+$$
+\mu_S>\pi.
+$$
+
+Rarity alone, however, does not make security targeting informative. The relevant quantity is the likelihood ratio
+
+$$
+\frac{\Pr(S\mid H)}{\Pr(S\mid L)}.
+$$
+
+Security targeting provides information about terrorist capacity only when it is relatively more characteristic of high-capacity organizations.
+
+# State Response
+
+After observing the terrorist campaign and updating its beliefs, the state chooses
+
+$$
+y \in \{P,M\},
+$$
+
+where $P$ denotes a limited or police-centered response and $M$ denotes military escalation.
+
+# Common Security Calculus
+
+Expected terrorist threat is
+
+$$
+Q(\mu)=q_L+(q_H-q_L)\mu(a).
+$$
+
+Let $\phi>0$ represent the additional security pressure generated by increased attack frequency. Let $\tau$ represent a regime-neutral difference between civilian and security targeting. Let $c(k)$ represent the relative cost of military escalation compared with policing, conditional on known state capacity $k$.
+
+The common security component is therefore
+
+$$
+Q(\mu)+\phi f+\tau\mathbf{1}\{x=C\}-c(k).
+$$
+
+# Regime-Specific Political Incentives
+
+## Democracies
+
+For democracies,
+
+$$
+\Pi_D(x,f)=d_C\mathbf{1}\{x=C\}+d_{CF}\mathbf{1}\{x=C\}f.
+$$
+
+The parameter $d_C>0$ captures public-accountability pressure generated by civilian victimization. The parameter $d_{CF}\geq 0$ captures the possibility that this pressure increases as civilian attacks become more frequent.
+
+## Autocracies
+
+For autocracies,
+
+$$
+\Pi_A(x,f)=a_S\mathbf{1}\{x=S\}+a_{SF}\mathbf{1}\{x=S\}f.
+$$
+
+The parameter $a_S>0$ captures regime-survival anxiety generated by attacks against the coercive apparatus. The parameter $a_{SF}\geq 0$ captures the possibility that repeated attacks against security institutions increasingly threaten perceptions of regime control.
+
+# State Escalation Condition
+
+The state's net payoff advantage from military escalation is
+
+$$
+\Delta_r(a,\mu;k)=Q(\mu)+\phi f+\tau\mathbf{1}\{x=C\}+\Pi_r(x,f)-c(k).
+$$
+
+The state chooses military escalation whenever
+
+$$
+\Delta_r(a,\mu;k)\geq 0.
+$$
+
+Otherwise, it chooses the police-centered response.
+
+# Posterior Escalation Threshold
+
+Substituting the expected-threat function gives
+
+$$
+q_L+(q_H-q_L)\mu(a)+\phi f+\tau\mathbf{1}\{x=C\}+\Pi_r(x,f)-c(k)\geq 0.
+$$
+
+Solving for the posterior belief gives
+
+$$
+\mu(a)\geq\mu_r^*(x,f;k),
+$$
+
+where
+
+$$
+\mu_r^*(x,f;k)=
+\frac{c(k)-q_L-\phi f-\tau\mathbf{1}\{x=C\}-\Pi_r(x,f)}{q_H-q_L}.
+$$
+
+If
+
+$$
+\mu(a)<\mu_r^*,
+$$
+
+the state treats terrorism primarily as a police problem. If
+
+$$
+\mu(a)\geq\mu_r^*,
+$$
+
+the state escalates militarily.
+
+# Threshold Regions
+
+## Low-Threat Region
+
+When perceived terrorist capacity lies below both target-specific thresholds, the state chooses policing regardless of target type.
+
+## Intermediate-Threat Region
+
+For a democracy, suppose
+
+$$
+\mu_D^*(C,f)<\mu<\mu_D^*(S,f).
+$$
+
+Then civilian targeting produces military escalation while security targeting remains a police problem.
+
+For an autocracy, the ordering may reverse:
+
+$$
+\mu_A^*(S,f)<\mu<\mu_A^*(C,f).
+$$
+
+Then security targeting produces military escalation while civilian targeting remains a police problem.
+
+## High-Threat Region
+
+When perceived terrorist capacity exceeds both thresholds, both target types produce military escalation. Target type should therefore have its strongest observable effect near the escalation threshold.
+
+# Basic Regime-Target Crossover
+
+Holding posterior beliefs constant, democracies prefer escalation relatively more after civilian attacks when
+
+$$
+\tau+d_C+d_{CF}f>0.
+$$
+
+Autocracies prefer escalation relatively more after security attacks when
+
+$$
+\tau-a_S-a_{SF}f<0.
+$$
+
+Both conditions hold when
+
+$$
+-(d_C+d_{CF}f)<\tau<a_S+a_{SF}f.
+$$
+
+# Revised Crossover With Bayesian Updating
+
+Let
+
+$$
+\mu_C=\Pr(H\mid C)
+$$
+
+and
+
+$$
+\mu_S=\Pr(H\mid S).
+$$
+
+If security targeting is relatively more characteristic of strong organizations,
+
+$$
+\mu_S>\mu_C.
+$$
+
+Define
+
+$$
+B=(q_H-q_L)(\mu_S-\mu_C).
+$$
+
+The generalized crossover condition becomes
+
+$$
+\boxed{B-(d_C+d_{CF}f)<\tau<B+(a_S+a_{SF}f)}.
+$$
+
+This is the central theoretical result. Target type affects state escalation through two channels:
+
+$$
+\text{Target type}
+\rightarrow
+\begin{cases}
+\text{regime-specific political pressure},\\
+\text{information about terrorist capacity}.
+\end{cases}
+$$
+
+# Autocratic Dual Mechanism
+
+For autocracies, security targeting can simultaneously increase regime-survival anxiety and perceived terrorist capacity:
+
+$$
+S
+\rightarrow
+\begin{cases}
+a_S\uparrow,\\
+\mu_S\uparrow
+\end{cases}
+\rightarrow M.
+$$
+
+The two mechanisms reinforce one another.
+
+# Target-Specific Frequency Thresholds
+
+Let
+
+$$
+f_{xr}^*
+$$
+
+represent the target-specific frequency threshold at which regime $r$ switches from policing to military escalation.
+
+Under the relevant parameter restrictions, the model predicts for autocracies:
+
+$$
+\boxed{f_{SA}^*<f_{CA}^*}.
+$$
+
+Equivalently, the difference in autocratic escalation incentives between security and civilian targeting increases with
+
+$$
+(q_H-q_L)(\mu_S-\mu_C)-\tau.
+$$
+
+# Terrorist Payoff
+
+Let terrorist payoff be
+
+$$
+U_T^\theta(a,y)=G_\theta(a)-D_\theta(a)\mathbf{1}\{y=M\}.
+$$
+
+There is no direct payoff from changing the state's belief. Beliefs matter indirectly:
+
+$$
+a\rightarrow\mu(a)\rightarrow y\rightarrow U_T.
+$$
+
+The terrorist type chooses
+
+$$
+a_\theta^*\in\arg\max_a\left[G_\theta(a)-D_\theta(a)m_r(a)\right],
+$$
+
+where
+
+$$
+m_r(a)=\mathbf{1}\{\mu(a)\geq\mu_r^*(a;k)\}.
+$$
+
+# Equilibrium Interpretation
+
+The model can generate pooling, separating, or semi-separating equilibria. In a pooling equilibrium,
+
+$$
+\mu(a)=\pi.
+$$
+
+In a separating equilibrium, observed behavior can reveal terrorist capacity. Semi-separating equilibria generate partial Bayesian updating. The empirical theory requires only that some campaign behaviors be relatively more likely among high-capacity organizations.
+
+# Hypotheses
+
+## H1: Democratic Civilian-Target Frequency Hypothesis
+
+As the frequency of civilian-targeted terrorist attacks increases, the probability of military escalation should increase more strongly in democracies than in autocracies.
+
+$$
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_D
+>
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_A.
+$$
+
+## H2: Autocratic Security-Target Frequency Hypothesis
+
+As the frequency of attacks against military and security forces increases, the probability of military escalation should increase more strongly in autocracies than in democracies.
+
+$$
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_A
+>
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_D.
+$$
+
+## H3: Regime-Target Crossover Hypothesis
+
+The relationship between target-specific terrorist attack frequency and military escalation should reverse across regime types: civilian-targeted attack frequency should generate stronger escalation incentives in democracies, whereas security-force-targeted attack frequency should generate stronger escalation incentives in autocracies.
+
+## H4: Capacity-Inference Hypothesis
+
+Security-force targeting should increase the probability of military escalation when such attacks cause governments to infer that the terrorist organization possesses greater organizational capacity. The mechanism requires
+
+$$
+\Pr(S\mid H)>\Pr(S\mid L).
+$$
+
+## H5: Autocratic Dual-Mechanism Hypothesis
+
+The effect of security-force targeting on military escalation should be especially strong in autocracies because attacks against coercive institutions simultaneously increase regime-survival anxiety and may increase perceived terrorist capacity.
+
+## H6: Differential Escalation-Threshold Hypothesis
+
+In autocracies, the frequency of security-force attacks required to trigger military escalation should be lower than the frequency of civilian attacks required to trigger military escalation:
+
+$$
+f_{SA}^*<f_{CA}^*.
+$$
+
+## H7: Bayesian-Shift Hypothesis
+
+The autocratic security-target advantage should increase as the inferred capacity difference between security and civilian targeting grows:
+
+$$
+(q_H-q_L)(\mu_S-\mu_C)-\tau>0.
+$$
+
+## H8: Threshold-Contingency Hypothesis
+
+The effects of target type and regime type should be strongest when the state is near its police-to-military escalation threshold and weaker when perceived terrorist capacity is either very low or very high.
+
+## H9: Selective State-Capacity Hypothesis
+
+Greater police, intelligence, bureaucratic, and judicial capacity should increase the level of terrorist threat necessary to induce military escalation.
+
+# Empirical Representation
+
+Define
+
+$$
+F_C=\text{frequency of civilian-targeted attacks}
+$$
+
+and
+
+$$
+F_S=\text{frequency of security-force-targeted attacks}.
+$$
+
+A reduced-form empirical model is
+
+$$
+\Pr(M_{it}=1)=F\!\left(
+\alpha+\beta_1F_{C,it}+\beta_2F_{S,it}+\beta_3D_i
++\beta_4F_{C,it}D_i+\beta_5F_{S,it}D_i
++\beta_6\widehat{\mu}_{it}+\beta_7k_{it}
++\mathbf{X}_{it}\gamma
+\right).
+$$
+
+The theoretical predictions concern marginal effects. For civilian attacks:
+
+$$
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_D
+>
+\left.\frac{\partial\Pr(M)}{\partial F_C}\right|_A.
+$$
+
+For security attacks:
+
+$$
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_A
+>
+\left.\frac{\partial\Pr(M)}{\partial F_S}\right|_D.
+$$
+
+# Conclusion
+
+The model proposes that target-specific terrorist attack frequency affects state escalation through three linked processes:
+
+$$
+\boxed{\text{Target-specific attack frequency}}
+$$
+
+affects
+
+$$
+\boxed{\text{regime-specific political vulnerability}}
+$$
+
+and
+
+$$
+\boxed{\text{government beliefs about terrorist capacity}},
+$$
+
+which jointly determine whether the state crosses
+
+$$
+\boxed{\text{the police-to-military escalation threshold}}.
+$$
+
+The most distinctive implication is that the same observable terrorist campaign can have different political meanings across regimes while simultaneously providing governments with information about terrorist organizational capacity.
+
+For autocracies in particular,
+
+$$
+\boxed{
+\text{security targeting}
+\rightarrow
+\text{survivability anxiety}
++
+\text{higher perceived terrorist capacity}
+\rightarrow
+\text{military escalation}
+}.
+$$
+
+This provides a theoretical explanation for why an autocratic government could tolerate a comparatively substantial civilian terrorist campaign as a police problem while responding militarily to a much smaller number of attacks against institutions central to regime security.
